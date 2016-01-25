@@ -65,3 +65,8 @@ class TowerOfHanoi
   end
 end
 
+
+
+t = TowerOfHanoi.new
+p t.towers
+p t.towers.each

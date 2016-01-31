@@ -8,26 +8,28 @@
           Tower Of Hanoi
         </a>
       </h1>
-    </header>
 
-    <div class="towers row well"></div><!-- towers -->
-
-      <div class="form row">
-        <div class="col-xs-6 col-xs-offset-3"></div>
-      </div><!-- form -->
-
-      <% tower_number.times do %>
-
-        <%= erb :"shared/tower", locals: {tower_number: tower_number, tower: tower} %>
-
+      <% if tower_of_hanoi.win? %>
+        <h5>You win</h5>
       <% end %>
 
+    </header>
 
+    <div class="towers row well">
+      <% tower_of_hanoi.towers.each_with_index do |tower, index| %>
+        <%= erb :"shared/tower", locals: { tower: tower, tower_number: index + 1 } %>
+      <% end %>
 
+    </div><!-- towers -->
+
+    <div class="form row">
+      <div class="col-xs-6 col-xs-offset-3"></div>
+        <%= erb :"shared/form", locals: {tower_of_hanoi: tower_of_hanoi} %>
+    </div><!-- form -->
 
   </div>
 
-  <%= erb :"shared/form" %>
+
   
 </div><!-- game -->
 

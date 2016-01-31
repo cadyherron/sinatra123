@@ -67,6 +67,6 @@ end
 
 
 
-t = TowerOfHanoi.new
-p t.towers
-p t.towers.each
+# t = TowerOfHanoi.new
+# p t.towers
+# p t.towers.each

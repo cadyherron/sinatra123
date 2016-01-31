@@ -20,6 +20,8 @@
 
     <main class="container">
       
+      <h5><%= flash[:error] if flash[:error] %></h5>
+      
       <%= yield %>
       
     </main>
